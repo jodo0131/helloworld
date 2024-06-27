@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11
+FROM phenompeople/openjdk17:latest
   
 EXPOSE 8080
  
