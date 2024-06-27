@@ -1,11 +1,10 @@
-FROM phenompeople/openjdk17:latest
-  
+FROM maven:3.9.0-eclipse-temurin-17 as build
+WORKDIR /app
+COPY . .
+RUN mvn clean install
+
+FROM eclipse-temurin:17.0.6_10-jdk
+WORKDIR /app
+COPY --from=build /app/target/*.jar /app/
 EXPOSE 8080
- 
-ENV APP_HOME /usr/src/app
-
-COPY target/*.jar $APP_HOME/app.jar
-
-WORKDIR $APP_HOME
-
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar","demoapp.jar"]
