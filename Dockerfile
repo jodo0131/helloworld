@@ -5,6 +5,6 @@ RUN mvn clean install
 
 FROM eclipse-temurin:17.0.6_10-jdk
 WORKDIR /app
-COPY --from=build /app/target/*.jar /app/
+COPY --from=build /app/target/*.jar /app/app.jar
 EXPOSE 8080
-CMD ["java", "-jar","demoapp.jar"]
+CMD ["java", "-jar","app.jar"]
