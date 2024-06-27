@@ -11,7 +11,7 @@ public class HelloController {
         return "index"; // Assuming "index.html" is your homepage template
     }
 
-    @GetMapping("/")
+    @GetMapping("/error")
     public String handleError() {
         return "error"; // for error page
     }
