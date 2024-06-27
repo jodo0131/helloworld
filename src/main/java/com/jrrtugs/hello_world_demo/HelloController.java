@@ -1,3 +1,5 @@
+package com.jrrtugs.hello_world_demo;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -6,6 +8,7 @@ public class HelloController {
 
     @GetMapping("/")
     public String hello() {
-        return "<html><body style='background-color:#f0f0f0;'><h1 style='color:#336699;'>Hello, World!</h1></body></html>";
+        return "index"; // Assuming "index.html" is your homepage template
     }
+
 }
